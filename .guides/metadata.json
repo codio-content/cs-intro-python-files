@@ -149,7 +149,13 @@
   {
    "id": "8192c9c9-c71a-9445-f218-164fe08ae1f4",
    "title": "Learning Objectives - Reading",
-   "files": [],
+   "files": [
+    {
+     "path": "#tabs",
+     "action": "close"
+    }
+   ],
+   "layout": "1-panel",
    "path": [],
    "type": "markdown",
    "content-file": ".guides/content/Learning-Objectives---Reading-8192.md",

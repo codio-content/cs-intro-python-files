@@ -4056,7 +4056,7 @@
   "source": {
    "name": "reading question read from a file write to another",
    "showName": false,
-   "instructions": "## Reading Question\nLook at the two code examples carefully. Fill in the blanks below based on these code examples.\n\n### Code Example 1\n```python\nwith open(\"source.txt\", \"r\") as source, open(\"dest.txt\", \"w\") as dest:\n    for line in source.readlines():\n        dest.write(line)\n```\n\n### Code Example 2\n```python\nwith open(\"source.txt\", \"r\") as source, open(\"dest.txt\", \"w\") as dest:\n    for line in dest.readlines():\n        source.write(line)\n```",
+   "instructions": "## Reading Question\nLook at the two code examples carefully. Fill in the blanks below based on these code examples.\n\n### Code Example 1\n```python\nwith open(\"source.txt\", \"r\") as source, open(\"dest.txt\", \"w\") as dest:\n    for line in source.readlines():\n        dest.write(line)\n```\n\n### Code Example 2\n```python\nwith open(\"source.txt\", \"w\") as source, open(\"dest.txt\", \"r\") as dest:\n    for line in dest.readlines():\n        source.write(line)\n```",
    "text": "In Code Example 1, Python reads from the file stored in the variable <<<source>>> and writes to file stored in variable <<<dest>>>.\n\nIn Code Example 2, Python reads from the file stored in the variable <<<dest>>> and writes to file stored in variable <<<source>>>.",
    "guidance": "In the first code example, Python is reading from the file represented by the variable `source` and writes to the file represented by the variable `dest`. \n\nIn the second code example, Python is reading from the file represented by the variable `dest` and writes to the file represented by the variable `source`.",
    "showGuidanceAfterResponse": true,
@@ -4123,10 +4123,10 @@
    "name": "formative assessment reading a file",
    "showName": false,
    "instructions": "## Formative Assessment\n\nAssume you have a text file called `story.txt`. Rearrange the code blocks below so that the program will print the text file as you would expect it to appear. **Note**, not all of the code blocks will be used.",
-   "initial": "with open(\"story.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        print(line)\nwith open(\"story.txt\", \"a\") as input_file: #distractor\nprint(lines) #distractor\nlines = input_file.writelines() #distractor",
+   "initial": "with open(\"story.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        print(line, end='')\nwith open(\"story.txt\", \"a\") as input_file: #distractor\nprint(lines, end='') #distractor\nlines = input_file.writelines() #distractor",
    "options": "{\n  \"sortableId\": \"sortable\",\n  \"trashId\": \"sortableTrash\"\n}",
    "grader": "",
-   "guidance": "In order to print the contents of a text file, you need to read the file first. Choose the `with open...` code block that has `\"r\"` to indicate read mode. When declaring the variable `lines` be sure to use the `readlines()` method and not `writelines()`. If you use `print(lines)`, you will not see the text in a \"normal\" manner. `lines` is a list that contains strings from the text. Printing this will output square brackets, quotation marks, newline characters, etc. Instead, loop through `lines` and print each string.\n\n```python\nwith open(\"story.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        print(lines)\n```",
+   "guidance": "In order to print the contents of a text file, you need to read the file first. Choose the `with open...` code block that has `\"r\"` to indicate read mode. When declaring the variable `lines` be sure to use the `readlines()` method and not `writelines()`. If you use `print(lines)`, you will not see the text in a \"normal\" manner. `lines` is a list that contains strings from the text. Printing this will output square brackets, quotation marks, newline characters, etc. Instead, loop through `lines` and print each string. Use `end=''` in the `print` statement to keep from have extra blank lines between the text.\n\n```python\nwith open(\"story.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        print(line)\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -4165,7 +4165,7 @@
    "name": "formative assessment iterating through a text file with a while loop",
    "showName": false,
    "instructions": "## Formative Assessment\n\nAssume you have a text file named `my_file.txt`. Fill in the blanks below so the code reads the file and prints each line of the text file.",
-   "text": "with open(\"my_file.txt\", <<<\"r\">>>) as input_file:\n    line = input_file.<<<readline()>>>\n    while line <<<!=>>> \"\":\n        print(<<<line>>>)\n        line = input_file.<<<readline()>>>",
+   "text": "```\nwith open(\"my_file.txt\", <<<\"r\">>>) as input_file:\n    line = input_file.<<<readline()>>>\n    while line <<<!=>>> \"\":\n        print(<<<line>>>)\n        line = input_file.<<<readline()>>>\n```",
    "guidance": "In order to print the content of a file, you need to read it first. The first blank sets the mode to read, `\"r\"`. The second blank is `readline()` so that the program can read the first line of the text file. The while loop should continue to run until it reaches the end of the file. The empty string (`\"\"`) is the end of the file. So the third blank is `!=`. To print the contents of the text file, blank four is the variable `line`. Finally, the loop needs the next line in the text file, so blank five is `readline()`.  \n\n```python\nwith open(\"my_file.txt\", \"r\") as input_file:\n    line = input_file.readline()\n    while line != \"\":\n        print(line)\n        line = input_file.readline()\n```",
    "showGuidanceAfterResponse": true,
    "showExpectedAnswer": true,
@@ -4204,7 +4204,7 @@
      "readline()"
     ],
     "text": [
-     "with open(\"my_file.txt\", ",
+     "```\nwith open(\"my_file.txt\", ",
      0,
      ") as input_file:\n    line = input_file.",
      0,
@@ -4213,7 +4213,8 @@
      " \"\":\n        print(",
      0,
      ")\n        line = input_file.",
-     0
+     0,
+     "\n```"
     ]
    }
   }

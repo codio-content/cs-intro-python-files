@@ -5,11 +5,7 @@
 Write mode has some unusual behavior. Writing to a non-existent file creates the file. Writing to an already existing file erases the previous contents of the file. The append mode will also create a file if one does not already exist. However, append mode will not erase content already saved to the file. It will add the text to the end of the file. Run this code and look at the output.
 
 ```python
-import os
-
-path = "student_folder/text"
-
-output_file = open(os.path.join(path, "practice3.txt"), "w")
+output_file = open("student_folder/text/practice3.txt", "w")
 output_file.writelines("First sentence")
 output_file.close()
 ```
@@ -20,11 +16,7 @@ output_file.close()
 Now append the following text to the file.
 
 ```python
-import os
-
-path = "student_folder/text"
-
-output_file = open(os.path.join(path, "practice3.txt"), "a")
+output_file = open("student_folder/text/practice3.txt", "a")
 output_file.writelines("Second sentence")
 output_file.close()
 ```
@@ -37,12 +29,9 @@ output_file.close()
 * Change the append text to `writelines("\nSecond sentence")`?
 * Change the program to:
 ```python
-import os
-
-path = "student_folder/text"
 new_text = ["How many boards\n", "Could the Mongols hoard\n", "If the Mongols hordes got bored?"]
 
-output_file = open(os.path.join(path, "practice3.txt"), "a")
+output_file = open("student_folder/text/practice3.txt", "a")
 output_file.writelines(new_text)
 output_file.close()
 ```
@@ -59,11 +48,7 @@ Opening and closing files is an important part of working with files, but it can
 ![With Open](.guides/images/with-open.png)
 
 ```python
-import os
-
-path = "student_folder/text"
-
-with open(os.path.join(path, "practice3.txt"), "a") as output_file:
+with open("student_folder/text/practice3.txt", "a") as output_file:
     output_file.writelines("Some new text!")
 ```
 
@@ -75,11 +60,7 @@ with open(os.path.join(path, "practice3.txt"), "a") as output_file:
 * Change the text in `writelines()` to `"\nSome new text!"`?
 * Change the program to:
 ```python
-import os
-
-path = "student_folder/text"
-
-with open(os.path.join(path, "practice3.txt"), "a") as output_file:
+with open("student_folder/text/practice3.txt", "a") as output_file:
     output_file.writelines("\nSome new text!")
     output_file.writelines("\nAnd some more text!")
     output_file.writelines("\nYet even more text!")

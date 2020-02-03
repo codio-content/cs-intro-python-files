@@ -5,11 +5,7 @@
 Imagine that you want to write the words `Hello` and `there` on separate lines of a file called `practice2.txt`. If the `print` statement writes each string on its own line, the `writelines` should too.
 
 ```python
-import os
-
-path = "student_folder/text"
-
-output_file = open(os.path.join(path, "practice2.txt"), "w")
+output_file = open("student_folder/text/practice2.txt", "w")
 output_file.writelines("Hello")
 output_file.writelines("there")
 output_file.close()
@@ -44,12 +40,8 @@ output_file.writelines("Hello\nthere")
 It is possible to use a list of strings with the `writelines()` method. However, these strings will be written one after another with no space between. If you want spaces, be sure to add them. If you want text to appear on a newline, use `\n`.
 
 ```python
-import os
-
-path = "student_folder/text"
-
 lines_to_write = ["First sentence.", "Second sentence.", "Third sentence."]
-output_file = open(os.path.join(path, "practice2.txt"), "w")
+output_file = open("student_folder/text/practice2.txt", "w")
 output_file.writelines(lines_to_write)
 output_file.close()
 ```
@@ -59,8 +51,10 @@ output_file.close()
 
 |||challenge
 ## What happens if you:
-* Change `lines_to_write` to `["First sentence. ", "Second sentence. ", "Third sentence."]`?
-* Change `lines_to_write` to `["First sentence.\n", "Second sentence.\n", "Third sentence."]`?
+* Change `lines_to_write` to:
+`["First sentence. ", "Second sentence. ", "Third sentence."]`
+* Change `lines_to_write` to:
+`["First sentence.\n", "Second sentence.\n", "Third sentence.\n"]`
 
 |||
 

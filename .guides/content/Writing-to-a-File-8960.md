@@ -5,11 +5,7 @@
 Once the file is opened, the `writelines()` method is used to write text to the file. Any string of text passed to `writelines()` will appear in the file. Once you are done writing to the file, close the file.
 
 ```python
-import os
-
-path = "student_folder/text"
-
-output_file = open(os.path.join(path, "practice1.txt"), "w")
+output_file = open("student_folder/text/practice1.txt", "w")
 output_file.writelines("Hello there")
 output_file.close()
 ```
@@ -23,7 +19,7 @@ output_file.close()
 ## What happens if you:
 * Change the string in `writelines()` to `"Goodbye"`?
 * Change the string in `writelines()` to `""`?
-* Change the mode to `open(os.path.join(path, "practice1.txt"), "r")`?
+* Change the mode to `open("student_folder/text/practice1.txt", "r")`?
 
 |||
 

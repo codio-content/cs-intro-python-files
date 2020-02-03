@@ -3579,7 +3579,7 @@
    "showGuidanceAfterResponse": true,
    "showExpectedAnswer": true,
    "points": 1,
-   "showValues": false,
+   "showValues": true,
    "metadata": {
     "tags": [
      {
@@ -5378,6 +5378,75 @@
    },
    "bloomsObjectiveLevel": "6",
    "learningObjectives": "SWBAT read a CSV and print out relevant information"
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-4251444764",
+  "source": {
+   "name": "reading question multiline strings",
+   "showName": false,
+   "instructions": "## Reading Question\nAssume the variable `lines_to_write` is a list of strings. You want to write these strings to a file so that it looks like this:\n\n```\nOne upon a time\nIn a land far, far away\nLived a king and queen\n```\n\nHow should `lines_to_write` be defined?",
+   "multipleResponse": false,
+   "answers": [
+    {
+     "_id": "8a87f013-2271-6f77-488e-d55289e1a5d1",
+     "correct": false,
+     "answer": "`lines_to_write = [\"One upon a time\", \"In a land far, far away\", \"Lived a king and queen\"]`"
+    },
+    {
+     "_id": "db767e47-4413-2be1-0674-1346ea81fda1",
+     "correct": false,
+     "answer": "`lines_to_write = [\"One upon a time, end=''\", \"In a land far, far away, end=''\", \"Lived a king and queen, end=''\"]`"
+    },
+    {
+     "_id": "60be976a-0443-2f33-7b15-b8154f488df9",
+     "correct": false,
+     "answer": "`lines_to_write = [\"One upon a time/n\", \"In a land far, far away/n\", \"Lived a king and queen/n\"]`"
+    },
+    {
+     "_id": "e84605f0-c975-0ab5-5f43-079d7c807379",
+     "correct": true,
+     "answer": "`lines_to_write = [\"One upon a time\\n\", \"In a land far, far away\\n\", \"Lived a king and queen\\n\"]`"
+    }
+   ],
+   "guidance": "The correct answer is:\n\n`lines_to_write = [\"One upon a time\\n\", \"In a land far, far away\\n\", \"Lived a king and queen\\n\"]`\n\nYou need a newline character after each string so that they appear on their own line. The character `\\n` is the escape character for a new line. The answer with just the strings is not correct. The answer with `/n` is not correct because this is not a valid escape character. Finally, `end=''` is used with the `print` statement to remove the newline character.",
+   "showGuidanceAfterResponse": true,
+   "showExpectedAnswer": true,
+   "points": 1,
+   "incorrectPoints": 0,
+   "metadata": {
+    "tags": [
+     {
+      "name": "Assessment Type",
+      "value": "Multiple Choice"
+     },
+     {
+      "name": "Content",
+      "value": "Files"
+     },
+     {
+      "name": "Programming Language",
+      "value": "Python"
+     },
+     {
+      "name": "Category",
+      "value": "Writing to a file, multiline strings"
+     }
+    ],
+    "files": [
+     "code/files/multiline-strings-write.py"
+    ],
+    "opened": [
+     {
+      "type": "file",
+      "panelNumber": 0,
+      "content": "code/files/multiline-strings-write.py"
+     }
+    ]
+   },
+   "bloomsObjectiveLevel": "3",
+   "learningObjectives": "SWBAT write multiline strings to a file"
   }
  }
 ]

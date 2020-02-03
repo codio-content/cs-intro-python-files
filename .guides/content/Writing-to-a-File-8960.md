@@ -23,7 +23,7 @@ output_file.close()
 ## What happens if you:
 * Change the string in `writelines()` to `"Goodbye"`?
 * Change the string in `writelines()` to `""`?
-* Change the mode to `open("practice1.txt", "r")`?
+* Change the mode to `open(os.path.join(path, "practice1.txt"), "r")`?
 
 |||
 

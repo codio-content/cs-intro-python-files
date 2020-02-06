@@ -6,27 +6,27 @@ Previously, printing the contents of the CSV file would return lists of strings.
 
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path, "home_runs.csv"), "r") as input_file:
+with open("student_folder/csv/home_runs.csv", "r") as input_file:
     reader = csv.reader(input_file)
     for row in reader:
-        print(row[0], "\t\t", row[1], "\t\t", row[2])
+        print(row[0], row[1], row[2])
 ```
-
-<details><summary>**"\t\t"**</summary>Remember, the `\` character introduces escape characters (see the strings unit). `\t` is the escape character means to insert a tab (blank space). `\t\t` means to print two tabs.</details>
 
 {try it}(python3 code/files/printing-csv.py 1)
 
 |||challenge
 ## What happens if you:
-* Add a third `\t` in the print statement?
-* Change the spacing in the print statement to `"\t\t|\t`?
-* Add this line of code to the end of the program `print("----------------------------------------------------------")`?
+* Add a space between each column of data:
+`print(row[0], " ", row[1], " ", row[2])`
+* Add a tab between each column of data:
+`print(row[0], "\t", row[1], "\t", row[2])`
+* Change the print statement to:
+`print("{:<14} \t {:<9} \t {:^12}".format(row[0], row[1], row[2]))`
 
 |||
+
+<details><summary>**What does `{:<14}` mean?**</summary>Printing output that is algined into columns may not work if you try to use just spaces and tabs to spearate the columns. `{:<14}` means left-justify the text and use a width of 14. 14 was chosen because that is the length of the longest names (Alex Rodriguez and Frank Robinson). Names shorter than 14 will "fill" the rest of the width with spaces. `{:>14}` means the text will be right-justified with a width of 14. `{:^14}` means the text will be centered across 14 spaces. Note, the`format` method needs to be used when aligning text.</details>
 
 {try it}(python3 code/files/printing-csv.py 2)
 
@@ -40,13 +40,9 @@ The for loop has three variables:`name`, `hr`, and `active`. The first variable,
 
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path, "home_runs.csv"), "r") as input_file:
+with open("student_folder/csv/home_runs.csv", "r") as input_file:
     reader = csv.reader(input_file)
-    print(reader)
     next(reader) #skip the header names
     for name, hr, active in reader:
         print("{} hit {} home runs.".format(name, hr))

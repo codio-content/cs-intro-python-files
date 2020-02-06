@@ -10,11 +10,8 @@ In order to read a CSV file, Python needs to import the `csv` module. If you are
 
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path,"monty_python_movies.csv"), "r") as input_file:
+with open("student_folder/csv/monty_python_movies.csv", "r") as input_file:
     reader = csv.reader(input_file)
     for row in reader:
         print(row)
@@ -28,11 +25,8 @@ with open(os.path.join(path,"monty_python_movies.csv"), "r") as input_file:
 * Use the CSV filename as the parameter of `reader`:
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path, "monty_python_movies.csv"), "r") as input_file:
+with open("student_folder/csv/monty_python_movies.csv", "r") as input_file:
     reader = csv.reader("monty_python_movies.csv")
     for row in reader:
         for data in row:
@@ -49,11 +43,8 @@ The first row of a CSV file is helpful because the header values provide context
 
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path, "home_runs.csv"), "r") as input_file:
+with open("student_folder/csv/home_runs.csv", "r") as input_file:
     reader = csv.reader(input_file)
     next(reader) #skip the header row
     for row in reader:

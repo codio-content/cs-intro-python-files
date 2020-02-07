@@ -6,11 +6,8 @@ Writing to a CSV file is similar to writing to a text file. Open the file and se
 
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path,"write_practice.csv"), "w") as output_file:
+with open("student_folder/csv/write_practice.csv", "w") as output_file:
     writer = csv.writer(output_file)
     writer.writerow(["Greeting", "Language"])
     writer.writerow(["Hello", "English"])
@@ -41,11 +38,8 @@ The `writerow` method writes only one row of information to a CSV file. The `wri
 
 ```python
 import csv
-import os
 
-path = "student_folder/csv"
-
-with open(os.path.join(path,"write_practice.csv"), "w") as output_file:
+with open("student_folder/csv/write_practice.csv", "w") as output_file:
     writer = csv.writer(output_file)
     writer.writerows([
       ["Artist", "Album", "Copies"],

@@ -8,7 +8,7 @@ Writing to a CSV file is similar to writing to a text file. Open the file and se
 import csv
 
 with open("student_folder/csv/write_practice.csv", "w") as output_file:
-    writer = csv.writer(output_file)
+    writer = csv.writer(output_file, lineterminator="\n")
     writer.writerow(["Greeting", "Language"])
     writer.writerow(["Hello", "English"])
     writer.writerow(["Bonjour", "French"])
@@ -18,6 +18,8 @@ with open("student_folder/csv/write_practice.csv", "w") as output_file:
 
 {try it}(python3 code/files/write_csv.py 1)
 [Open the File](open_file student_folder/csv/write_practice.csv)
+
+<details><summary>**What does `lineterminator` mean?**</summary>The `csv` writer ends each line with the escape characters `\r\n`. The combination of two different escape characters causes the following warning.<img src=".guides/images/lineterminator.png" />Changing the `lineterminator` to `\n` will remove this warning because there will only be one escape character at the end of each line.</details>
 
 |||challenge
 ## What happens if you:
@@ -40,7 +42,7 @@ The `writerow` method writes only one row of information to a CSV file. The `wri
 import csv
 
 with open("student_folder/csv/write_practice.csv", "w") as output_file:
-    writer = csv.writer(output_file)
+    writer = csv.writer(output_file, lineterminator="\n")
     writer.writerows([
       ["Artist", "Album", "Copies"],
       ["Michael Jackson", "Thriller", "47 million"],

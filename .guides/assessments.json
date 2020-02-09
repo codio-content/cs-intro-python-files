@@ -4742,7 +4742,7 @@
     {
      "_id": "2e5bfe3b-30ea-b415-001b-d1e592e4c8ba",
      "correct": false,
-     "answer": "reader = csv.reader(input_file, delimiter=\"\\!\")"
+     "answer": "reader = csv.reader(input_file, delimiter=\"\\\\!\")"
     },
     {
      "_id": "33762c50-5b7e-5c7d-5e4c-98a14bc7da1f",

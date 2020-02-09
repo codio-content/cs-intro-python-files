@@ -9,15 +9,10 @@ The Caesar cipher works by having a list of all of the symbols that can be encry
 ![Caesar Cipher](.guides/images/caesar-cipher.png)
 
 ### Reading the Source File
-This program will read from a file called `source.txt` with the path of `student_files/.labs`. The encrypted text will be written into a file called `encrypted.txt` with the path of `student_files/text`. Create path variables for the source path and the encrypted path. Then open both files, `source.txt` in read mode and `encrypted.txt` in write mode. Import the `os` module as well.
+This program will read from a file called `source.txt` with the path of `student_folder/.labs`. The encrypted text will be written into a file called `encrypted.txt` with the path of `student_folder/text`.
 
 ```python
-import os
-
-source_path = "student_folder/.labs"
-encrypted_path = "student_folder/text"
-
-with open(os.path.join(source_path, "source.txt"), "r") as source, open(os.path.join(encrypted_path, "encrypted.txt"), "w") as destination:   
+with open("student_folder/.labs/source.txt", "r") as source, open("student_folder/text/encrypted.txt", "w") as destination:   
 ```
 
 Next, you need set the key (a number from 0 to 25), the cipher mode (encrypt or decrypt), the list of symbols and an empty string of the new characters (either encrypted or decrypted).
@@ -76,16 +71,10 @@ Now that the character has been transformed according to the key, add the charac
 <details><summary>**Code**</summary><img src=".guides/images/encryption.png" /></details>
 
 ### Decrypting the File
-To decrypt the file, a few changes need to be made to your code. First, create a decrypted path. 
+To decrypt the file, a few changes need to be made to your code. The source file should be the encrypted file, and the destination file will be the file `decrypted.txt`. 
 
 ```python
-decrypted_path = "student_folder/text"
-```
-
-You need to update the files that you are opening. The source file should be the encrypted file, and the destination file will be the file `decrypted.txt`. 
-
-```python
-with open(os.path.join(encrypted_path, "encrypted.txt"), "r") as source, open(os.path.join(decrypted_path, "decrypted.txt"), "w") as destination:
+with open("student_folder/text/encrypted.txt", "r") as source, open("student_folder/text/decrypted.txt", "w") as destination:
 ```
 
 Finally, change the mode of the cipher to `"decrypt"`.

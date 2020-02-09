@@ -513,9 +513,14 @@
      "path": "code/files/lab3.py",
      "panel": 0,
      "action": "open"
+    },
+    {
+     "path": "#terminal: ",
+     "panel": 1,
+     "action": "open"
     }
    ],
-   "layout": "2-panels-tree",
+   "layout": "3-cell",
    "path": [],
    "type": "markdown",
    "content-file": ".guides/content/Lab-3-790a.md",

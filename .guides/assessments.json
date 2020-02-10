@@ -4936,7 +4936,7 @@
    "instructions": "Submit your code to be graded.",
    "command": "python3 code/files/exercise1.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one possible solution. The first three lines of your program are already given.\n\n```python\nimport os, sys\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n```\n\nYou will need two variables; one to count the number of lines and another to count the number of characters. Set these variables to 0.\n\n```python\nline_count = 0\nchar_count = 0\n```\n\nOpen the text file in read mode.\n\n```python\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n```\n\nThis solution uses a while loop to read through the text file one line at a time. Start by reading the first line of the text file. Then start the loop, checking to see if the line from the text file is equal to `\"\"`.\n\n```python\n    line = input_file.readline()\n    while line != \"\":\n```\n\nFor each line read, increment the `line_count` variable by 1. Calculate the length of the line of text (which is a string) with the `len` function. Add this value to `char_count`. Read the next line from the text file.\n\n```python\n        line_count += 1\n        char_count += len(line)\n        line = input_file.readline()\n```\n\nOnce the loop has finished running, print the two variables with accompanying text.\n\n```python\nprint(\"{} lines\".format(line_count))\nprint(\"{} characters\".format(char_count))\n```\n\nHere is the full code:\n\n```python\nimport os, sys\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n\nline_count = 0\nchar_count = 0\n\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    line = input_file.readline()\n    while line != \"\":\n        line_count += 1\n        char_count += len(line)\n        line = input_file.readline()\n\nprint(\"{} lines\".format(line_count))\nprint(\"{} characters\".format(char_count))\n```",
+   "guidance": "Here is one possible solution. The first two lines of your program are already given.\n\n```python\nimport sys\n\ntest_file = sys.argv[1]\n```\n\nYou will need two variables; one to count the number of lines and another to count the number of characters. Set these variables to 0.\n\n```python\nline_count = 0\nchar_count = 0\n```\n\nOpen the text file in read mode.\n\n```python\nwith open(test_file, \"r\") as input_file:\n```\n\nThis solution uses a while loop to read through the text file one line at a time. Start by reading the first line of the text file. Then start the loop, checking to see if the line from the text file is equal to `\"\"`.\n\n```python\n    line = input_file.readline()\n    while line != \"\":\n```\n\nFor each line read, increment the `line_count` variable by 1. Calculate the length of the line of text (which is a string) with the `len` function. Add this value to `char_count`. Read the next line from the text file.\n\n```python\n        line_count += 1\n        char_count += len(line)\n        line = input_file.readline()\n```\n\nOnce the loop has finished running, print the two variables with accompanying text.\n\n```python\nprint(\"{} lines\".format(line_count))\nprint(\"{} characters\".format(char_count))\n```\n\nHere is the full code:\n\n```python\nimport sys\n\ntest_file = sys.argv[1]\n\nline_count = 0\nchar_count = 0\n\nwith open(test_file, \"r\") as input_file:\n    line = input_file.readline()\n    while line != \"\":\n        line_count += 1\n        char_count += len(line)\n        line = input_file.readline()\n\nprint(\"{} lines\".format(line_count))\nprint(\"{} characters\".format(char_count))\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -4950,21 +4950,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure files-exercise-1-test-1.txt",
+     "arguments": ".guides/secure/files-exercise-1-test-1.txt",
      "input": "",
      "output": "4 lines\n248 characters",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-1-test-2.txt",
+     "arguments": ".guides/secure/files-exercise-1-test-2.txt",
      "input": "",
      "output": "7 lines\n940 characters",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-1-test-3.txt",
+     "arguments": ".guides/secure/files-exercise-1-test-3.txt",
      "input": "",
      "output": "0 lines\n0 characters",
      "showFeedback": false,
@@ -5014,7 +5014,7 @@
    "instructions": "Submit your code when you are ready.",
    "command": "python3 code/files/exercise2.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one way to solve the problem. The first three lines of the program are give, but do not forget to add the `csv` module since you are working with CSV files.\n\n```python\nimport os, sys, csv\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n```\n\nThere are four columns of numbers, and you need to calculate the average of each. You need five variables: one variable for each of the four columns to calculate the total value of the column, and a fifth variable that keeps track of how many rows are in the CSV file. Set all of those variables to 0.\n\n```python\ntotal1 = 0\ntotal2 = 0\ntotal3 = 0\ntotal4 = 0\nrow_count = 0\n```\n\nNext, open the CSV file in read mode and pass it to the `csv.reader`.\n\n```python\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    reader = csv.reader(input_file)\n```\n\nThis solution uses the unpacking technique to \"pull apart\" the four numbers in each row of the CSV file.\n\n```python\n    for num1, num2, num3, num4 in reader:\n```\n\nIncrement the variable that counts the number of rows. Then add each number (`num1`, `num2`, etc.) to the appropriate variable (`total1`, `total2`, etc.). Remember, information taken from a CSV file always comes in as a string. You need to typecast the information into an integer (or a float).\n\n```python\n        row_count += 1\n        total1 += int(num1)\n        total2 += int(num2)\n        total3 += int(num3)\n        total4 += int(num4)\n```\n\nOnce the loop has finished running, print the totals divided by the number of rows.\n\n```python\nprint(\"{} {} {} {}\".format(total1/row_count, total2/row_count, total3/row_count, total4/row_count))\n```\n\nHere is the complete program.\n\n```python\nimport os, sys, csv\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n\ntotal1 = 0\ntotal2 = 0\ntotal3 = 0\ntotal4 = 0\nrow_count = 0\n\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    reader = csv.reader(input_file)\n    for num1, num2, num3, num4 in reader:\n        row_count += 1\n        total1 += int(num1)\n        total2 += int(num2)\n        total3 += int(num3)\n        total4 += int(num4)\n\nprint(\"{} {} {} {}\".format(total1/row_count, total2/row_count, total3/row_count, total4/row_count))\n```",
+   "guidance": "Here is one way to solve the problem. The first two lines of the program are given, but do not forget to add the `csv` module since you are working with CSV files.\n\n```python\nimport sys, csv\n\ntest_file = sys.argv[1]\n```\n\nThere are four columns of numbers, and you need to calculate the average of each. You need five variables: one variable for each of the four columns to calculate the total value of the column, and a fifth variable that keeps track of how many rows are in the CSV file. Set all of those variables to 0.\n\n```python\ntotal1 = 0\ntotal2 = 0\ntotal3 = 0\ntotal4 = 0\nrow_count = 0\n```\n\nNext, open the CSV file in read mode and pass it to the `csv.reader`.\n\n```python\nwith open(test_file, \"r\") as input_file:\n    reader = csv.reader(input_file)\n```\n\nThis solution uses the unpacking technique to \"pull apart\" the four numbers in each row of the CSV file.\n\n```python\n    for num1, num2, num3, num4 in reader:\n```\n\nIncrement the variable that counts the number of rows. Then add each number (`num1`, `num2`, etc.) to the appropriate variable (`total1`, `total2`, etc.). Remember, information taken from a CSV file always comes in as a string. You need to typecast the information into an integer (or a float).\n\n```python\n        row_count += 1\n        total1 += int(num1)\n        total2 += int(num2)\n        total3 += int(num3)\n        total4 += int(num4)\n```\n\nOnce the loop has finished running, print the totals divided by the number of rows.\n\n```python\nprint(\"{} {} {} {}\".format(total1/row_count, total2/row_count, total3/row_count, total4/row_count))\n```\n\nHere is the complete program.\n\n```python\nimport sys, csv\n\ntest_file = sys.argv[1]\n\ntotal1 = 0\ntotal2 = 0\ntotal3 = 0\ntotal4 = 0\nrow_count = 0\n\nwith open(test_file, \"r\") as input_file:\n    reader = csv.reader(input_file)\n    for num1, num2, num3, num4 in reader:\n        row_count += 1\n        total1 += int(num1)\n        total2 += int(num2)\n        total3 += int(num3)\n        total4 += int(num4)\n\nprint(\"{} {} {} {}\".format(total1/row_count, total2/row_count, total3/row_count, total4/row_count))\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -5028,21 +5028,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure files-exercise-2-test-1.csv",
+     "arguments": ".guides/secure/files-exercise-2-test-1.csv",
      "input": "",
      "output": "15.0 2.0 8.0 4.0",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-2-test-2.csv",
+     "arguments": ".guides/secure/files-exercise-2-test-2.csv",
      "input": "",
      "output": "1.0 2.0 3.0 4.0",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-2-test-3.csv",
+     "arguments": ".guides/secure/files-exercise-2-test-3.csv",
      "input": "",
      "output": "3.0 4.0 5.0 6.0",
      "showFeedback": false,
@@ -5092,7 +5092,7 @@
    "instructions": "When you are ready, submit your code.",
    "command": "python3 code/files/lab-challenge.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one solution to the problem. First, start by importing the `os` module to create the path for the text file. Create the variable `path` and set its value to the text file's location.\n\n```python\nimport os\n\npath = \"student_folder/.labs\"\n```\n\nOpen the text file in read mode and read all of the lines of the text file.\n\n```python\nwith open(os.path.join(path, \"myanmar.txt\"), \"r\") as input_file:\n    lines = input_file.readlines()\n```\n\nIterate through `lines` and if the word `\"Burma\"` appears, print the line substituting `\"Myanmar\"` for `\"Burma\"`. Adding the `end=\"\"` to the print statement is not necessary. This bit of code removes the newline character so there are no blank lines between the text.\n\n```python\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n```\n\nIf the word `\"Burma\"` does not appear, print the line of text with no modification. The `end=\"\"` is optional.\n\n```python\n        else:\n            print(line, end=\"\")\n```\n\nHere is the complete code.\n\n```python\nimport os\n\npath = \"student_folder/.labs\"\n\nwith open(os.path.join(path, \"myanmar.txt\"), \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n        else:\n            print(line, end=\"\")\n```",
+   "guidance": "Here is one solution to the problem. First, start by opening the text file in read mode and read all of the lines of the text file.\n\n```python\nwith open(\".guides/secure/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n```\n\nIterate through `lines` and if the word `\"Burma\"` appears, print the line substituting `\"Myanmar\"` for `\"Burma\"`. Adding the `end=\"\"` to the print statement is not necessary. This bit of code removes the newline character so there are no blank lines between the text.\n\n```python\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n```\n\nIf the word `\"Burma\"` does not appear, print the line of text with no modification. The `end=\"\"` is optional.\n\n```python\n        else:\n            print(line, end=\"\")\n```\n\nHere is the complete code.\n\n```python\nwith open(\".guides/secure/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n        else:\n            print(line, end=\"\")\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -5156,7 +5156,7 @@
    "instructions": "Submit your code when you are ready",
    "command": "python3 code/files/exercise3.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one solution to the problem. The first three lines of the program are given.\n\n```python\nimport os, sys\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n```\n\nNext, open the file in read mode. Read all of the lines at once, and then reverse the order of the list.\n\n```python\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    lines = input_file.readlines()\n    lines.reverse()\n```\n\nIterate through the list of strings and print each one. \n\n```python\n    for line in lines:\n        print(line)\n```\n\nHere is the complete code.\n\n```python\nimport os, sys\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    lines = input_file.readlines()\n    lines.reverse()\n    for line in lines:\n        print(line)\n```",
+   "guidance": "Here is one solution to the problem. The first two lines of the program are given.\n\n```python\nimport sys\n\ntest_file = sys.argv[1]\n```\n\nNext, open the file in read mode. Read all of the lines at once, and then reverse the order of the list.\n\n```python\nwith open(test_file, \"r\") as input_file:\n    lines = input_file.readlines()\n    lines.reverse()\n```\n\nIterate through the list of strings and print each one. \n\n```python\n    for line in lines:\n        print(line)\n```\n\nHere is the complete code.\n\n```python\nimport sys\n\ntest_file = sys.argv[1]\n\nwith open(test_file, \"r\") as input_file:\n    lines = input_file.readlines()\n    lines.reverse()\n    for line in lines:\n        print(line)\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -5170,23 +5170,23 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure files-exercise-3-test-1.txt",
+     "arguments": ".guides/secure/files-exercise-3-test-1.txt",
      "input": "",
      "output": "For the moment, at least, I was free.\nWith a steady movement—cautious, sidelong, shrinking, and slow—I slid from the embrace of the bandage and beyond the reach of the scimitar.\nAt a wave of my hand my deliverers hurried tumultuously away.\nBut the moment of escape had arrived.\nTwice again it swung, and a sharp sense of pain shot through every nerve.\nIt had cut through the linen beneath.\nIt had divided the serge of the robe.\nBut the stroke of the pendulum already pressed upon my bosom.\nThe surcingle hung in ribands from my body.\nI at length felt that I was free.\nNor had I erred in my calculations—nor had I endured in vain.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-3-test-2.txt",
+     "arguments": ".guides/secure/files-exercise-3-test-2.txt",
      "input": "",
      "output": "The ringing became more distinct:—It continued and became more distinct: I talked more freely to get rid of the feeling: but it continued and gained definiteness—until, at length, I found that the noise was not within my ears.\nMy head ached, and I fancied a ringing in my ears: but still they sat and still chatted.\nBut, ere long, I felt myself getting pale and wished them gone.\nThey sat, and while I answered cheerily, they chatted of familiar things.\nI was singularly at ease.\nMy manner had convinced them.\nThe officers were satisfied.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-3-test-2.txt",
+     "arguments": ".guides/secure/files-exercise-3-test-3.txt",
      "input": "",
-     "output": "Only this, and nothing more.'\n'Tis some visiter,' I muttered, 'tapping at my chamber door—\nAs of some one gently rapping, rapping at my chamber door.\nAs of some one gently rapping, rapping at my chamber door.\nWhile I nodded, nearly napping, suddenly there came a tapping,\nOver many a quaint and curious volume of forgotten lore,\nOnce upon a midnight dreary, while I pondered, weak and weary,",
+     "output": "Only this, and nothing more.'\n'Tis some visiter,' I muttered, 'tapping at my chamber door—\nAs of some one gently rapping, rapping at my chamber door.\nWhile I nodded, nearly napping, suddenly there came a tapping,\nOver many a quaint and curious volume of forgotten lore,\nOnce upon a midnight dreary, while I pondered, weak and weary,",
      "showFeedback": false,
      "feedback": ""
     }
@@ -5234,7 +5234,7 @@
    "instructions": "Submit your code when you are ready.",
    "command": "python3 code/files/exercise4.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one possible solution to the problem. The first three lines are given to you. Do not forget about the `csv` module.\n\n```python\nimport os, sys, csv\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\n```\n\nYou will also need two more variables. One to keep track of the oldest age and another to keep track of the oldest name. Set the oldest age variable to 0 and the oldest person to an empty string.\n\n```python\noldest_age = 0\noldest_name = \"\"\n```\n\nOpen the CSV file and use the `csv.reader` to parse the CSV file. Since this is a tab delimited file, make sure to tell Python to use tabs when separating the data.\n\n```python\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    reader = csv.reader(input_file, delimiter=\"\\t\")\n```\n\nBefore you can start searching the file for the oldest person, you need to account for the first row that has the header files. Use the `next` command to skip this row, and then start iterating over the CSV file. Use the unpacking method to give each piece of information in a row its own variable name.\n\n```python\n    next(reader)\n    for name, age, career in reader:\n```\n\nCompare the `age` in the row to the variable `oldest_age`. Remember, data in a CSV file is stored as a string. Typecast `age` as an int to make this comparison. If `age` is greater than `oldest_age`, then update `oldest_age` with `age`. Also set `oldest_name` to `name`.\n\n```python\n        if int(age) > oldest_age:\n            oldest_age = int(age)\n            oldest_name = name\n```\n\nOnce the loop has finished running, print the name of the oldest person.\n\n```python\nprint(\"The oldest person is {}.\".format(oldest_name))\n```\n\nHere is the final code:\n```python\nimport os, sys, csv\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\noldest_age = 0\noldest_name = \"\"\n\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    reader = csv.reader(input_file, delimiter=\"\\t\")\n    next(reader)\n    for name, age, career in reader:\n        if int(age) > oldest_age:\n            oldest_age = int(age)\n            oldest_name = name\n            \nprint(\"The oldest person is {}.\".format(oldest_name))\n```",
+   "guidance": "Here is one possible solution to the problem. The first two lines are given to you. Do not forget about the `csv` module.\n\n```python\nimport sys, csv\n\ntest_file = sys.argv[1]\n```\n\nYou will also need two more variables. One to keep track of the oldest age and another to keep track of the oldest name. Set the oldest age variable to 0 and the oldest person to an empty string.\n\n```python\noldest_age = 0\noldest_name = \"\"\n```\n\nOpen the CSV file and use the `csv.reader` to parse the CSV file. Since this is a tab delimited file, make sure to tell Python to use tabs when separating the data.\n\n```python\nwith open(test_file, \"r\") as input_file:\n    reader = csv.reader(input_file, delimiter=\"\\t\")\n```\n\nBefore you can start searching the file for the oldest person, you need to account for the first row that has the header files. Use the `next` command to skip this row, and then start iterating over the CSV file. Use the unpacking method to give each piece of information in a row its own variable name.\n\n```python\n    next(reader)\n    for name, age, career in reader:\n```\n\nCompare the `age` in the row to the variable `oldest_age`. Remember, data in a CSV file is stored as a string. Typecast `age` as an int to make this comparison. If `age` is greater than `oldest_age`, then update `oldest_age` with `age`. Also set `oldest_name` to `name`.\n\n```python\n        if int(age) > oldest_age:\n            oldest_age = int(age)\n            oldest_name = name\n```\n\nOnce the loop has finished running, print the name of the oldest person.\n\n```python\nprint(\"The oldest person is {}.\".format(oldest_name))\n```\n\nHere is the final code:\n```python\nimport sys, csv\n\ntest_file = sys.argv[1]\noldest_age = 0\noldest_name = \"\"\n\nwith open(test_file, \"r\") as input_file:\n    reader = csv.reader(input_file, delimiter=\"\\t\")\n    next(reader)\n    for name, age, career in reader:\n        if int(age) > oldest_age:\n            oldest_age = int(age)\n            oldest_name = name\n            \nprint(\"The oldest person is {}.\".format(oldest_name))\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -5248,21 +5248,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure files-exercise-4-test-1.csv",
+     "arguments": ".guides/secure/files-exercise-4-test-1.csv",
      "input": "",
      "output": "The oldest person is Raphael.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-4-test-2.csv",
+     "arguments": ".guides/secure/files-exercise-4-test-2.csv",
      "input": "",
      "output": "The oldest person is Ringo.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-4-test-3.csv",
+     "arguments": ".guides/secure/files-exercise-4-test-3.csv",
      "input": "",
      "output": "The oldest person is Agatha.",
      "showFeedback": false,
@@ -5312,7 +5312,7 @@
    "instructions": "Submit your code when ready",
    "command": "python3 code/files/exercise5.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one possible solution to the problem. The first three lines are already given. Remember, reading CSV files requires the `csv` module. You will also need an empty list to store all of the cities in the Southern Hemisphere. Declare `cities` and set it to an empty list.\n\n```python\nimport os, sys, csv\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\ncities = []\n```\n\nOpen the CSV file in read mode. Then use `csv.reader` to parse the CSV file. Since the file has headers, use the `next` command to skip over them.\n\n```python\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    reader = csv.reader(input_file)\n    next(reader)\n```\n\nIterate through the CSV file while using the unpacking method to give each item in the row its own variable name. Check to see if the `latitude` is a negative number, which represents the Southern Hemisphere. Data stored in a CSV file are strings, so typecast `latitude` as an int. If the `city` is in the Southern Hemisphere, add it to the `cities` list.\n\n```python\n    for city, country, latitude, longitude in reader:\n        if int(latitude) < 0:\n            cities.append(city)\n```\n\nOnce the loop has finished running, you need to print the results. There are two parts to the results: the text `\"The following cities are in the Southern Hemisphere: \"` and the list of cities. Print the first part, but be sure to add `end=\"\"` so that the list of cities does not appear on the next line. The iterate over the list `cities`.\n\n```python\nprint(\"The following cities are in the Southern Hemisphere: \", end=\"\")\nfor city in cities:\n```\n\nAs for printing the cities, either you print the city followed by a comma and a space, or you print the city followed by a period. Check to see if the city you are printing is the last element in the list `cities`. If yes, print the city and a period. In all other cases print the city followed by a comma and a space.\n\n```python\n    if city == cities[-1]:\n        print(city + \".\")\n    else:\n        print(city, end=\", \")\n```\n\nHere is all of the code:\n\n```python\nimport os, sys, csv\n\npath = sys.argv[1]\nfile_name = sys.argv[2]\ncities = []\n\nwith open(os.path.join(path, file_name), \"r\") as input_file:\n    reader = csv.reader(input_file)\n    next(reader)\n    for city, country, latitude, longitude in reader:\n        if int(latitude) < 0:\n            cities.append(city)\n            \nprint(\"The following cities are in the Southern Hemisphere: \", end=\"\")\nfor city in cities:\n    if city == cities[-1]:\n        print(city + \".\")\n    else:\n        print(city, end=\", \")\n```",
+   "guidance": "Here is one possible solution to the problem. The first two lines are already given. Remember, reading CSV files requires the `csv` module. You will also need an empty list to store all of the cities in the Southern Hemisphere. Declare `cities` and set it to an empty list.\n\n```python\nimport sys, csv\n\ntest_file = sys.argv[1]\ncities = []\n```\n\nOpen the CSV file in read mode. Then use `csv.reader` to parse the CSV file. Since the file has headers, use the `next` command to skip over them.\n\n```python\nwith open(test_file, \"r\") as input_file:\n    reader = csv.reader(input_file)\n    next(reader)\n```\n\nIterate through the CSV file while using the unpacking method to give each item in the row its own variable name. Check to see if the `latitude` is a negative number, which represents the Southern Hemisphere. Data stored in a CSV file are strings, so typecast `latitude` as an int. If the `city` is in the Southern Hemisphere, add it to the `cities` list.\n\n```python\n    for city, country, latitude, longitude in reader:\n        if int(latitude) < 0:\n            cities.append(city)\n```\n\nOnce the loop has finished running, you need to print the results. There are two parts to the results: the text `\"The following cities are in the Southern Hemisphere: \"` and the list of cities. Print the first part, but be sure to add `end=\"\"` so that the list of cities does not appear on the next line. The iterate over the list `cities`.\n\n```python\nprint(\"The following cities are in the Southern Hemisphere: \", end=\"\")\nfor city in cities:\n```\n\nAs for printing the cities, either you print the city followed by a comma and a space, or you print the city followed by a period. Check to see if the city you are printing is the last element in the list `cities`. If yes, print the city and a period. In all other cases print the city followed by a comma and a space.\n\n```python\n    if city == cities[-1]:\n        print(city + \".\")\n    else:\n        print(city, end=\", \")\n```\n\nHere is all of the code:\n\n```python\nimport sys, csv\n\ntest_file = sys.argv[1]\ncities = []\n\nwith open(test_file, \"r\") as input_file:\n    reader = csv.reader(input_file)\n    next(reader)\n    for city, country, latitude, longitude in reader:\n        if int(latitude) < 0:\n            cities.append(city)\n            \nprint(\"The following cities are in the Southern Hemisphere: \", end=\"\")\nfor city in cities:\n    if city == cities[-1]:\n        print(city + \".\")\n    else:\n        print(city, end=\", \")\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -5326,21 +5326,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure files-exercise-5-test-1.csv",
+     "arguments": ".guides/secure/files-exercise-5-test-1.csv",
      "input": "",
      "output": "The following cities are in the Southern Hemisphere: Santiago, Tananarive, Nairobi, Montevideo.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-5-test-2.csv",
+     "arguments": ".guides/secure/files-exercise-5-test-2.csv",
      "input": "",
      "output": "The following cities are in the Southern Hemisphere: Lima, Rio de Janeiro.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure files-exercise-5-test-3.csv",
+     "arguments": ".guides/secure/files-exercise-5-test-3.csv",
      "input": "",
      "output": "The following cities are in the Southern Hemisphere: Melbourne, Asunción.",
      "showFeedback": false,

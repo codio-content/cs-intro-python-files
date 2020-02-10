@@ -12,21 +12,21 @@ The CSV file will look something like the one below. **Note**, there will be a r
 |Paul |41  |Lawyer|
 |Mary |32  |Systems Engineer|
 
-The first three lines of your code **must** look like this:
+The first two lines of your code **must** look like this:
 
 ```python
-import os, sys, csv
+import sys, csv
 
-path = sys.argv[1]
-file_name = sys.argv[2]
+test_file = sys.argv[1]
 ```
-This allows for different text files and paths to be sent to your program for testing. The `TRY IT` button below will send a test file to your program. You should see the following output:
+This allows for different text files to be sent to your program for testing. **Hint**, to open the file use `with open(test_file, "r"...`. The `TRY IT` button below will send a test file to your program. You should see the following output:
 
 ```text
 The oldest person is Paul.
 ```
 
-[Code Visualizer](open_tutor code/files/exercise4.py)
-{try it}(python3 code/files/exercise4.py student_folder/.exercises test4.csv)
+<details><summary>**Where is the code visualizer?**</summary>Unfortunately, the code visualizer does not work with the `open` command, so it cannot be used for this problem.</details>
+
+{try it}(python3 code/files/exercise4.py student_folder/.exercises/test4.csv)
 
 {Check It!|assessment}(code-output-compare-135786605)

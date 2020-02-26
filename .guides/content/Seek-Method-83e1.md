@@ -30,7 +30,7 @@ with open("student_folder/text/read_practice.txt", "r") as read_file:
 It was previously stated that a file cannot be read multiple times. That is true when trying to use `readlines` twice. You must close and then open the file to read it again. However, the `seek` method can also be used to move Python back to the beginning of the text file.
 
 ```python
-with open("student_folder/text/read_practice.txt"), "r") as read_file:
+with open("student_folder/text/read_practice.txt", "r") as read_file:
     print("First Time")
     for line in read_file.readlines():
         print(line, end="")

@@ -15,7 +15,7 @@ output_file = open("student_folder/text/practice1.txt", "w")
 output_file.close()
 ``` 
 
-{try it}(python3 code/files/writing.py 1)
+{try it}(python3 code/files/navigating.py 1)
 
 <details><summary>**Where is the output?**</summary>You should see a green check mark after running your program. This means the code ran without any errors. But what about the output? The code above only opens and then closes a file.
 
@@ -25,6 +25,6 @@ output_file.close()
 
 |||
 
-{try it}(python3 code/files/writing.py 2)
+{try it}(python3 code/files/navigating.py 2)
 
 {Check It!|assessment}(multiple-choice-4246621000)

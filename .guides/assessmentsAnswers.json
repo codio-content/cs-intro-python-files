@@ -22,8 +22,26 @@
  },
  {
   "taskId": "code-output-compare-3508746783",
-  "points": 0,
-  "results": []
+  "points": 1,
+  "results": [
+   {
+    "code": 0,
+    "output": "{\"sequence\": [{\"returnCode\": 0, \"stderr\": \"\", \"passed\": true, \"stdout\": \"4 lines\\n248 characters\\n\"}, {\"returnCode\": 0, \"stderr\": \"\", \"passed\": true, \"stdout\": \"7 lines\\n940 characters\\n\"}, {\"returnCode\": 0, \"stderr\": \"\", \"passed\": true, \"stdout\": \"0 lines\\n0 characters\\n\"}]}",
+    "expectedOutputs": [
+     {
+      "output": "4 lines\n248 characters"
+     },
+     {
+      "output": "7 lines\n940 characters"
+     },
+     {
+      "output": "0 lines\n0 characters"
+     }
+    ],
+    "timestamp": 1582826307344,
+    "state": "pass"
+   }
+  ]
  },
  {
   "taskId": "code-output-compare-3072203434",
@@ -44,5 +62,41 @@
   "taskId": "code-output-compare-4037337142",
   "points": 0,
   "results": []
+ },
+ {
+  "taskId": "test-2331755082",
+  "points": 1,
+  "results": [
+   {
+    "code": 0,
+    "output": "<h2>All tests passed!</h2>",
+    "timestamp": 1582821783435,
+    "state": "pass"
+   },
+   {
+    "code": 0,
+    "output": "<h2>All tests passed!</h2>",
+    "timestamp": 1582821726958,
+    "state": "pass"
+   },
+   {
+    "code": 1,
+    "output": "<h2>Test did not pass</h2>\nProgram did not open the file in read mode.",
+    "timestamp": 1582821196534,
+    "state": "fail"
+   },
+   {
+    "code": 1,
+    "output": "<h2>Test did not pass</h2>\nProgram did not open the file in read mode.",
+    "timestamp": 1582821131070,
+    "state": "fail"
+   },
+   {
+    "code": 1,
+    "output": "Traceback (most recent call last):\n  File \"code/files/lab-challenge.py\", line 1, in <module>\n    with open(\"student_folder/.lab/myanmar.txt\", \"r\") as input_file:\nFileNotFoundError: [Errno 2] No such file or directory: 'student_folder/.lab/myanmar.txt'\n<h2>Test did not pass</h2>\nProgram did not open the file in read mode.\nTraceback (most recent call last):\n  File \".guides/secure/unit_tests/files/lab_test.py\", line 44, in <module>\n    if not check_output(student_code):\n  File \".guides/secure/unit_tests/files/lab_test.py\", line 21, in check_output\n    student_output = subprocess.check_output([\"python3\", file]).rstrip()\n  File \"/usr/lib/python3.6/subprocess.py\", line 356, in check_output\n    **kwargs).stdout\n  File \"/usr/lib/python3.6/subprocess.py\", line 438, in run\n    output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['python3', 'code/files/lab-challenge.py']' returned non-zero exit status 1.",
+    "timestamp": 1582821078874,
+    "state": "fail"
+   }
+  ]
  }
 ]

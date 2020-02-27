@@ -1,7 +1,7 @@
 ----------
 
 ## Lab Challenge
-Write a program that reads the text file `.guides/secure/myanmar.txt`. The file contains several instances of the word `Burma`. Replace each instance of `Burma` with `Myanmar`, and print the results of this transformation. The final output of your program should be:
+Write a program that reads the text file `student_folder/.labs/myanmar.txt`. The file contains several instances of the word `Burma`. Replace each instance of `Burma` with `Myanmar`, and print the results of this transformation. The final output of your program should be:
 
 ```text
 Myanmar is a country in Southeast Asia.
@@ -14,4 +14,4 @@ Myanmar is a former British colony.
 
 {try it}(python3 code/files/lab-challenge.py)
 
-{Check It!|assessment}(code-output-compare-1691073765)
+{Check It!|assessment}(test-2331755082)

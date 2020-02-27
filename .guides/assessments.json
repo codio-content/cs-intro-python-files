@@ -4944,21 +4944,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure/files-exercise-1-test-1.txt",
+     "arguments": ".guides/files-exercise-1-test-1.txt",
      "input": "",
      "output": "4 lines\n248 characters",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-1-test-2.txt",
+     "arguments": ".guides/files-exercise-1-test-2.txt",
      "input": "",
      "output": "7 lines\n940 characters",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-1-test-3.txt",
+     "arguments": ".guides/files-exercise-1-test-3.txt",
      "input": "",
      "output": "0 lines\n0 characters",
      "showFeedback": false,
@@ -5022,21 +5022,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure/files-exercise-2-test-1.csv",
+     "arguments": ".guides/files-exercise-2-test-1.csv",
      "input": "",
      "output": "15.0 2.0 8.0 4.0",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-2-test-2.csv",
+     "arguments": ".guides/files-exercise-2-test-2.csv",
      "input": "",
      "output": "1.0 2.0 3.0 4.0",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-2-test-3.csv",
+     "arguments": ".guides/files-exercise-2-test-3.csv",
      "input": "",
      "output": "3.0 4.0 5.0 6.0",
      "showFeedback": false,
@@ -5086,7 +5086,7 @@
    "instructions": "When you are ready, submit your code.",
    "command": "python3 code/files/lab-challenge.py",
    "preExecuteCommand": "",
-   "guidance": "Here is one solution to the problem. First, start by opening the text file in read mode and read all of the lines of the text file.\n\n```python\nwith open(\".guides/secure/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n```\n\nIterate through `lines` and if the word `\"Burma\"` appears, print the line substituting `\"Myanmar\"` for `\"Burma\"`. Adding the `end=\"\"` to the print statement is not necessary. This bit of code removes the newline character so there are no blank lines between the text.\n\n```python\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n```\n\nIf the word `\"Burma\"` does not appear, print the line of text with no modification. The `end=\"\"` is optional.\n\n```python\n        else:\n            print(line, end=\"\")\n```\n\nHere is the complete code.\n\n```python\nwith open(\".guides/secure/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n        else:\n            print(line, end=\"\")\n```",
+   "guidance": "Here is one solution to the problem. First, start by opening the text file in read mode and read all of the lines of the text file.\n\n```python\nwith open(\"student_folder/.labs/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n```\n\nIterate through `lines` and if the word `\"Burma\"` appears, print the line substituting `\"Myanmar\"` for `\"Burma\"`. Adding the `end=\"\"` to the print statement is not necessary. This bit of code removes the newline character so there are no blank lines between the text.\n\n```python\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n```\n\nIf the word `\"Burma\"` does not appear, print the line of text with no modification. The `end=\"\"` is optional.\n\n```python\n        else:\n            print(line, end=\"\")\n```\n\nHere is the complete code.\n\n```python\nwith open(\"student_folder/.lab/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n        else:\n            print(line, end=\"\")\n```",
    "showGuidanceAfterResponse": true,
    "points": 1,
    "oneTimeTest": true,
@@ -5164,21 +5164,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure/files-exercise-3-test-1.txt",
+     "arguments": ".guides/files-exercise-3-test-1.txt",
      "input": "",
      "output": "For the moment, at least, I was free.\nWith a steady movement—cautious, sidelong, shrinking, and slow—I slid from the embrace of the bandage and beyond the reach of the scimitar.\nAt a wave of my hand my deliverers hurried tumultuously away.\nBut the moment of escape had arrived.\nTwice again it swung, and a sharp sense of pain shot through every nerve.\nIt had cut through the linen beneath.\nIt had divided the serge of the robe.\nBut the stroke of the pendulum already pressed upon my bosom.\nThe surcingle hung in ribands from my body.\nI at length felt that I was free.\nNor had I erred in my calculations—nor had I endured in vain.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-3-test-2.txt",
+     "arguments": ".guides/files-exercise-3-test-2.txt",
      "input": "",
      "output": "The ringing became more distinct:—It continued and became more distinct: I talked more freely to get rid of the feeling: but it continued and gained definiteness—until, at length, I found that the noise was not within my ears.\nMy head ached, and I fancied a ringing in my ears: but still they sat and still chatted.\nBut, ere long, I felt myself getting pale and wished them gone.\nThey sat, and while I answered cheerily, they chatted of familiar things.\nI was singularly at ease.\nMy manner had convinced them.\nThe officers were satisfied.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-3-test-3.txt",
+     "arguments": ".guides/files-exercise-3-test-3.txt",
      "input": "",
      "output": "Only this, and nothing more.'\n'Tis some visiter,' I muttered, 'tapping at my chamber door—\nAs of some one gently rapping, rapping at my chamber door.\nWhile I nodded, nearly napping, suddenly there came a tapping,\nOver many a quaint and curious volume of forgotten lore,\nOnce upon a midnight dreary, while I pondered, weak and weary,",
      "showFeedback": false,
@@ -5242,21 +5242,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure/files-exercise-4-test-1.csv",
+     "arguments": ".guides/files-exercise-4-test-1.csv",
      "input": "",
      "output": "The oldest person is Raphael.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-4-test-2.csv",
+     "arguments": ".guides/files-exercise-4-test-2.csv",
      "input": "",
      "output": "The oldest person is Ringo.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-4-test-3.csv",
+     "arguments": ".guides/files-exercise-4-test-3.csv",
      "input": "",
      "output": "The oldest person is Agatha.",
      "showFeedback": false,
@@ -5320,21 +5320,21 @@
    "showExpectedAnswer": true,
    "sequence": [
     {
-     "arguments": ".guides/secure/files-exercise-5-test-1.csv",
+     "arguments": ".guides/files-exercise-5-test-1.csv",
      "input": "",
      "output": "The following cities are in the Southern Hemisphere: Santiago, Tananarive, Nairobi, Montevideo.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-5-test-2.csv",
+     "arguments": ".guides/files-exercise-5-test-2.csv",
      "input": "",
      "output": "The following cities are in the Southern Hemisphere: Lima, Rio de Janeiro.",
      "showFeedback": false,
      "feedback": ""
     },
     {
-     "arguments": ".guides/secure/files-exercise-5-test-3.csv",
+     "arguments": ".guides/files-exercise-5-test-3.csv",
      "input": "",
      "output": "The following cities are in the Southern Hemisphere: Melbourne, Asunción.",
      "showFeedback": false,
@@ -5442,6 +5442,42 @@
    },
    "bloomsObjectiveLevel": "3",
    "learningObjectives": "SWBAT write multiline strings to a file"
+  }
+ },
+ {
+  "type": "test",
+  "taskId": "test-2331755082",
+  "source": {
+   "name": "lab challenge advanced code test",
+   "showName": false,
+   "instructions": "## Lab Challenge\n\nSubmit your code when ready",
+   "command": "python3 .guides/secure/unit_tests/files/lab_test.py",
+   "arePartialPointsAllowed": false,
+   "timeoutSeconds": 40,
+   "guidance": "Here is one solution to the problem. First, start by opening the text file in read mode and read all of the lines of the text file.\n\n```python\nwith open(\"student_folder/.labs/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n```\n\nIterate through `lines` and if the word `\"Burma\"` appears, print the line substituting `\"Myanmar\"` for `\"Burma\"`. Adding the `end=\"\"` to the print statement is not necessary. This bit of code removes the newline character so there are no blank lines between the text.\n\n```python\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n```\n\nIf the word `\"Burma\"` does not appear, print the line of text with no modification. The `end=\"\"` is optional.\n\n```python\n        else:\n            print(line, end=\"\")\n```\n\nHere is the complete code.\n\n```python\nwith open(\"student_folder/.labs/myanmar.txt\", \"r\") as input_file:\n    lines = input_file.readlines()\n    for line in lines:\n        if \"Burma\" in line:\n            print(line.replace(\"Burma\", \"Myanmar\"), end=\"\")\n        else:\n            print(line, end=\"\")\n```",
+   "showGuidanceAfterResponse": true,
+   "points": 1,
+   "oneTimeTest": false,
+   "metadata": {
+    "tags": [
+     {
+      "name": "Assessment Type",
+      "value": "Advanced Code Test"
+     }
+    ],
+    "files": [
+     "code/files/lab-challenge.py"
+    ],
+    "opened": [
+     {
+      "type": "file",
+      "panelNumber": 0,
+      "content": "code/files/lab-challenge.py"
+     }
+    ]
+   },
+   "bloomsObjectiveLevel": "",
+   "learningObjectives": ""
   }
  }
 ]

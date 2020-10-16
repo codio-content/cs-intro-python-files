@@ -24,7 +24,10 @@ Next, you need set the key (a number from 0 to 25), the cipher mode (encrypt or 
     new_text = ""
 ```
 
-<details><summary>**Why is `SYMBOLS` in all caps?**</summary>There is a type of variable called a constant. This variable should never change its value. The Python community represents constants by using all caps when writing the variable name.</details>
+<details>
+  <summary><strong>Why is <code>SYMBOLS</code> in all caps?</strong></summary>
+  There is a type of variable called a constant. This variable should never change its value. The Python community represents constants by using all caps when writing the variable name.
+</details><br>
 
 Read the first line from the `source` file. If it is not an empty string (the end of the text file), then you are going to loop through each character of the line.
 
@@ -68,7 +71,38 @@ Now that the character has been transformed according to the key, add the charac
 {try it}(python3 code/files/lab4.py 1)
 [Open the encrypted file](open_file student_folder/text/encrypted.txt)
 
-<details><summary>**Code**</summary><img src=".guides/images/encryption.png" /></details>
+<details>
+  <summary><strong>Code</strong></summary>
+  
+  ```python
+  with open("student_folder/.labs/source.txt", "r") as source, open("student_folder/text/encrypted.txt", "w") as destination:
+      key = 13
+      mode = "encrypt"
+      SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
+      new_text = ""
+  
+      line = source.readline()
+      while line != "":
+          for char in line:
+              if char in SYMBOLS:
+                char_index = SYMBOLS.find(char)
+                
+                if mode == "encrypt":
+                    new_index = char_index + key
+                elif mode == "decrypt":
+                    new_index = char_index - key
+  
+                if new_index &gt;= len(SYMBOLS):
+                    new_index = new_index - len(SYMBOLS)
+                elif new_index &lt; 0:
+                    new_index = new_index + len(SYMBOLS)
+                new_text += SYMBOLS[new_index]
+  
+          destination.write(new_text)
+          line = source.readline()
+  ```
+  
+</details>
 
 ### Decrypting the File
 To decrypt the file, a few changes need to be made to your code. The source file should be the encrypted file, and the destination file will be the file `decrypted.txt`. 
@@ -88,6 +122,9 @@ Run the program and take a look at the output below.
 {try it}(python3 code/files/lab4.py 2)
 [Open the decrypted file](open_file student_folder/text/decrypted.txt)
 
-<details><summary>**Source Text**</summary>The original text for this lab is the [opening paragraph](http://www.gutenberg.org/files/55/55-h/55-h.htm#chap01) from L. Frank Baum's *The Wizard of Oz*.</details>
+<details>
+  <summary><strong>Source Text</strong></summary>
+  The original text for this lab is the <a href="http://www.gutenberg.org/files/55/55-h/55-h.htm#chap01">opening paragraph</a> from L. Frank Baum's <em>The Wizard of Oz</em>.
+</details>
 
 {Check It!|assessment}(multiple-choice-3180548474)

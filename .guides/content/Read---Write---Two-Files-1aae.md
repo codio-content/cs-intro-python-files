@@ -10,7 +10,10 @@ with open("student_folder/text/read_practice.txt", "r") as source, open("student
         dest.write(line)
 ```
 
-<details><summary>**`write` vs `writelines`**</summary>In the code above the `write` method is being used to write text to a file. Previously, the method `writelines` was used to write text to a file. What's the difference? `writelines` can accept a single string or a list of strings as shown in previous lessons. `write`, however, can only accept a single string.</details>
+<details>
+  <summary><strong><code>write</code> vs <code>writelines</code></strong></summary>
+  In the code above the <code>write</code> method is being used to write text to a file. Previously, the method <code>writelines</code> was used to write text to a file. What's the difference? <code>writelines</code> can accept a single string or a list of strings as shown in previous lessons. <code>write</code>, however, can only accept a single string.
+</details><br>
 
 {try it}(python3 code/files/read-write-two-files.py 1)
 [Open destination.txt](open_preview student_folder/text/destination.txt)

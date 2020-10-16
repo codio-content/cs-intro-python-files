@@ -13,7 +13,10 @@ output_file.close()
 {try it}(python3 code/files/writing.py 2)
 [Open practice1.txt](open_preview student_folder/text/practice1.txt)
 
-<details><summary>**Raw Text**</summary>When writing to text files, Python outputs raw text. Raw text is the text that appears in a text editor. There is no special formatting or extra information attached to this text. Text in MS Word is not raw text. Raw text files have the extension `.txt`.</details>
+<details>
+  <summary><strong>Raw Text</strong></summary>
+  When writing to text files, Python outputs raw text. Raw text is the text that appears in a text editor. There is no special formatting or extra information attached to this text. Text in MS Word is not raw text. Raw text files have the extension <code>.txt</code>.
+</details>
 
 |||challenge
 ## What happens if you:

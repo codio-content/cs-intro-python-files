@@ -18,7 +18,10 @@ This allows for different text files to be sent to your program for testing. **H
 231 characters
 ```
 
-<details><summary>**Where is the code visualizer?**</summary>Unfortunately, the code visualizer does not work with the `open` command, so it cannot be used for this problem.</details>
+<details>
+  <summary><strong>Where is the code visualizer?</strong></summary>
+  Unfortunately, the code visualizer does not work with the <code>open</code> command, so it cannot be used for this problem.
+</details><br>
 
 {try it}(python3 code/files/exercise1.py student_folder/.exercises/test1.txt)
 

@@ -515,7 +515,7 @@
      "action": "open"
     },
     {
-     "path": "#terminal: ",
+     "path": "#terminal: clear",
      "panel": 1,
      "action": "open"
     }

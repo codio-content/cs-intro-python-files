@@ -27,7 +27,10 @@ read_file.close()
 
 Notice that Python does not print the contents of the text file. Instead it prints information about the file object (name, mode, and encoding). If you want to print the contents of a text file, use the `readlines` method.
 
-<details><summary>**UTF-8**</summary>There are many characters that go beyond letters and numbers. For example, punctuation, accents, symbols, emojis, etc. There needs to be a way to use these characters in a way that everybody can understand. Encoding is an agreed upon method for representing these characters. UTF-8 is by far the most popular way to encode text today. If you want to know more, check out this <a href="http://kunststube.net/encoding/">article</a>.</details>
+<details>
+  <summary><strong>UTF-8</strong></summary>
+  There are many characters that go beyond letters and numbers. For example, punctuation, accents, symbols, emojis, etc. There needs to be a way to use these characters in a way that everybody can understand. Encoding is an agreed upon method for representing these characters. UTF-8 is by far the most popular way to encode text today. If you want to know more, check out this <a href="http://kunststube.net/encoding/">article</a>.
+</details>
 
 ```python
 read_file = open("student_folder/text/read_practice.txt", "r")

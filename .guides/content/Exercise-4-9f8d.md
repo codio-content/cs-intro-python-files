@@ -25,7 +25,10 @@ This allows for different text files to be sent to your program for testing. **H
 The oldest person is Paul.
 ```
 
-<details><summary>**Where is the code visualizer?**</summary>Unfortunately, the code visualizer does not work with the `open` command, so it cannot be used for this problem.</details>
+<details>
+  <summary><strong>Where is the code visualizer?</strong></summary>
+  Unfortunately, the code visualizer does not work with the <code>open</code> command, so it cannot be used for this problem.
+</details><br>
 
 {try it}(python3 code/files/exercise4.py student_folder/.exercises/test4.csv)
 

@@ -19,7 +19,10 @@ with open("student_folder/csv/write_practice.csv", "w") as output_file:
 {try it}(python3 code/files/write_csv.py 1)
 [Open the File](open_file student_folder/csv/write_practice.csv)
 
-<details><summary>**What does `lineterminator` mean?**</summary>The `csv` writer ends each line with the escape characters `\r\n`. The combination of two different escape characters causes the following warning.<img src=".guides/images/lineterminator.png" />Changing the `lineterminator` to `\n` will remove this warning because there will only be one escape character at the end of each line.</details>
+<details>
+  <summary><strong>What does <code>lineterminator</code> mean?</strong></summary>
+  The <code>csv</code> writer ends each line with the escape characters <code>\r\n</code>. The combination of two different escape characters causes the following warning.<img src=".guides/images/lineterminator.png" />Changing the <code>lineterminator</code> to <code>\n</code> will remove this warning because there will only be one escape character at the end of each line.
+</details>
 
 |||challenge
 ## What happens if you:

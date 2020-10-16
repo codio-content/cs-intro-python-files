@@ -12,7 +12,10 @@ with open("student_folder/text/read_practice.txt", "r") as read_file:
 
 {try it}(python3 code/files/file-iteration.py 1)
 
-<details><summary>**Reading a file multiple times**</summary>When Python reaches the end of a file with `readlines`, it will not start back at the beginning until you close the file and then reopen it.</details>
+<details>
+  <summary><strong>Reading a file multiple times</strong></summary>
+  When Python reaches the end of a file with <code>readlines</code>, it will not start back at the beginning until you close the file and then reopen it.
+</details>
 
 |||challenge
 ## What happens if you:

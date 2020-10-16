@@ -11,7 +11,10 @@ output_file.writelines("there")
 output_file.close()
 ```
 
-<details><summary>**Closing a File**</summary>Closing the file is an important step in working with files. If you forget to close a file, some unpredictable actions may take place. For example, if you open a file with newly written text before closing the file, that text may not be in the file. Be sure that you close all of the files that you open.</details>
+<details>
+  <summary><strong>Closing a File</strong></summary>
+  Closing the file is an important step in working with files. If you forget to close a file, some unpredictable actions may take place. For example, if you open a file with newly written text before closing the file, that text may not be in the file. Be sure that you close all of the files that you open.
+</details><br>
 
 {try it}(python3 code/files/multiline-strings-write.py 1)
 [Open practice2.txt](open_preview student_folder/text/practice2.txt)

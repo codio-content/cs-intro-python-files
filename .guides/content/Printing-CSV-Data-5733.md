@@ -26,7 +26,10 @@ with open("student_folder/csv/home_runs.csv", "r") as input_file:
 
 |||
 
-<details><summary>**What does `{:<14}` mean?**</summary>Printing output that is algined into columns may not work if you try to use just spaces and tabs to spearate the columns. `{:<14}` means left-justify the text and use a width of 14. 14 was chosen because that is the length of the longest names (Alex Rodriguez and Frank Robinson). Names shorter than 14 will "fill" the rest of the width with spaces. `{:>14}` means the text will be right-justified with a width of 14. `{:^14}` means the text will be centered across 14 spaces. Note, the`format` method needs to be used when aligning text.</details>
+<details>
+  <summary><strong>What does <code>{:&lt;14}</code> mean?</strong></summary>
+    Printing output that is aligned into columns may not work if you try to use just spaces and tabs to separate the columns. <code>{:&lt;14}</code> means left-justify the text and use a width of 14. 14 was chosen because that is the length of the longest names (Alex Rodriguez and Frank Robinson). Names shorter than 14 will "fill" the rest of the width with spaces. <code>{:&gt;14}</code> means the text will be right-justified with a width of 14. <code>{:^14}</code> means the text will be centered across 14 spaces. Note, the <code>format</code> method needs to be used when aligning text.
+</details><br>
 
 {try it}(python3 code/files/printing-csv.py 2)
 
@@ -59,6 +62,9 @@ with open("student_folder/csv/home_runs.csv", "r") as input_file:
 
 {try it}(python3 code/files/printing-csv.py 4)
 
-<details><summary>**Unpacking and list length**</summary>Unpacking only works if you know how many elements are in the list. You must have the same number variables in the for loop as there are elements in the list. If you don't know how long a list is, you can always iterate over the list to access all of the elements.</details>
+<details>
+  <summary><strong>Unpacking and list length</strong></summary>
+  Unpacking only works if you know how many elements are in the list. You must have the same number variables in the for loop as there are elements in the list. If you don't know how long a list is, you can always iterate over the list to access all of the elements.
+</details>
 
 {Check It!|assessment}(multiple-choice-3850148086)

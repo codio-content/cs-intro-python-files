@@ -43,7 +43,7 @@ with open("student_folder/text/read_practice.txt", "r") as read_file:
 
 |||challenge
 ## What happens if you:
-* Chage the first `line = read_file.readline()` to `readlines()`?
+* Change the first `line = read_file.readline()` to `readlines()`?
 * Remove the first `line = read_file.readline()`?
 * Put back the first `line = read_file.readline()` and remove the second one?
 

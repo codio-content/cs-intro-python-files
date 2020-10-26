@@ -2,7 +2,7 @@
 
 ## Multiline Strings
 
-Imagine that you want to write the words `Hello` and `there` on separate lines of a file called `practice2.txt`. If the `print` statement writes each string on its own line, the `writelines` should too.
+Imagine that you want to write the words `Hello` and `there` on separate lines of a file called `practice2.txt`. If the `print` statement writes each string on its own line, then `writelines` should too.
 
 ```python
 output_file = open("student_folder/text/practice2.txt", "w")

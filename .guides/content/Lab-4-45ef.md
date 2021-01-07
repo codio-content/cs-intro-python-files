@@ -20,7 +20,7 @@ Next, you need set the key (a number from 0 to 25), the cipher mode (encrypt or 
 ```python
     key = 13
     mode = "encrypt"
-    SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
+    SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.-;"
     new_text = ""
 ```
 
@@ -78,7 +78,7 @@ Now that the character has been transformed according to the key, add the charac
   with open("student_folder/.labs/source.txt", "r") as source, open("student_folder/text/encrypted.txt", "w") as destination:
       key = 13
       mode = "encrypt"
-      SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
+      SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.-;"
       new_text = ""
   
       line = source.readline()
@@ -92,9 +92,9 @@ Now that the character has been transformed according to the key, add the charac
                 elif mode == "decrypt":
                     new_index = char_index - key
   
-                if new_index &gt;= len(SYMBOLS):
+                if new_index >= len(SYMBOLS):
                     new_index = new_index - len(SYMBOLS)
-                elif new_index &lt; 0:
+                elif new_index < 0:
                     new_index = new_index + len(SYMBOLS)
                 new_text += SYMBOLS[new_index]
   
